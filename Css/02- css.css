@@ -602,6 +602,16 @@
 	color: inherit;
 }
 
+.vid_tools1 {
+	width: 100%;
+	margin: none;
+	border-radius: inherit;
+
+	display: flex;
+	background-color: inherit;
+	color: inherit;
+}
+
 .font_for_header {
 	font-family: "Helvetica";
 	letter-spacing: 1px;
@@ -1257,8 +1267,13 @@ input:focus {
 	animation-fill-mode: forwards;
 	padding: 0.5em;
 	margin: 1em;
-	background-color: rgba(245, 50, 50, 0.959);
-	border-radius: 7.5px;
+	/*background-color: rgba(245, 50, 50, 0.959);*/
+	background-color: rgba(128, 128, 128, 0.352);
+	border-width: 1px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgba(245, 50, 50, 0.959);
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 
 
 
@@ -1783,4 +1798,222 @@ video::-webkit-media-controls-timeline {
 	font-family: 'Roboto';
 	color: grey;
 	padding: 0.1em;
+}
+
+/*
+@keyframe CommentBoxAni {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+
+	}
+
+	to {
+		width: 100%;
+
+		display: flex;
+
+		background-color: yellow;
+		z-index: 80;
+		opacity: 1;
+		visibility: visible;
+
+
+	}
+
+
+}*/
+
+
+.CommentBox {
+	opacity: 0;
+	width: available;
+	margin: 0;
+	position: relative;
+	visibility: hidden;
+	background-color: inherit;
+	color: inherit;
+	display: flex;
+	padding: 0.5em;
+	flex-wrap: wrap;
+	height: 0px;
+	flex-direction: row;
+	bottom: 0em;
+	animation-timing-function: ease-in-out;
+	animation-duration: 0.5s;
+	z-index: 0;
+	border-radius: 0.45em;
+	animation-fill-mode: forwards;
+	transition-duration: 0.5s;
+}
+
+@keyframes AppearComnt {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		z-index: 0;
+		padding: 0em;
+		bottom: 1em;
+
+	}
+
+	to {
+		bottom: 0em;
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+		z-index: 90;
+		padding: 0.45em;
+
+	}
+}
+
+@keyframes DisappearComnt {
+	from {
+		opacity: 1;
+		padding: 0.45em;
+		bottom: 0em;
+		z-index: 90;
+		height: auto;
+		visibility: visible;
+
+	}
+
+	to {
+		height: 0px;
+		z-index: 0;
+		visibility: hidden;
+		opacity: 0;
+		bottom: 1em;
+		padding: 0em;
+
+	}
+}
+
+.ExpTst {
+	animation: Appear;
+	transition-duration: 0.5s;
+	animation-duration: 0.5s;
+	padding: 0.5em;
+	height: auto;
+	min-height:7em;
+	max-height: 90vh;
+	text-align: center;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border-width: 0.08em;
+	border-radius: 0.45em;
+
+	border-style: solid;
+	border-color: rosybrown;
+	width: 100%;
+	background-color: inherit;
+}
+
+.CommentTools {
+	bottom: 0em;
+	width: 100%;
+	height: auto;
+	position: relative;
+	color: inherit;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0.3em;
+	flex-direction: row;
+	background-color: inherit;
+}
+
+.AddComnt {
+	float: right;
+	padding: 0.2em;
+	outline: none;
+	width: fit-content;
+
+	height: fit-content;
+	border: none;
+
+	background-color: inherit;
+	color: inherit;
+
+	cursor: pointer;
+	border-radius: 0.42em;
+	box-shadow: 0px 0px 0.5em 0px var(--BoxShaCo);
+	margin: 0.3em;
+}
+
+.AddComnt:hover {
+	background-color: var(--SecBtnBgHov);
+	color: var(--SecBtnCol);
+	transition-duration: 0.5s;
+}
+
+.ComntText {
+	width: 100%;
+	position: relative;
+	background-color: rgba(39, 37, 37, 0.838);
+	color: inherit;
+	resize: none;
+	overflow-y: hidden;
+	overflow-x: scroll;
+	margin: 0.3em;
+}
+
+.IndiComnt {
+	width: 100%;
+	margin: auto;
+	background-color: inherit;
+}
+
+.IndiComntIndi {
+	width: 100%;
+	background-color: inherit;
+
+}
+
+.IndiComntAC {
+	position: absolute;
+
+	left: 0em;
+	
+
+	max-width: 60px;
+	text-overflow: ellipsis;
+	width: fit-content;
+	min-width: 2em;
+	min-height: 2em;
+	font-size: smaller;
+}
+
+.IndiComntTime {
+	bottom: 0em;
+	right: 0em;
+	width: fit-content;
+	min-height: 2em;
+
+	position: relative;
+	font-size: smaller;
+}
+
+.IndiComntCreate {
+	
+	right: 0em;
+text-rendering: geometricPrecision;
+	position: absolute;
+	font-size: smaller;
+	max-width: 60px;
+	text-overflow: ellipsis;
+	width: fit-content;
+	min-height: 2em;
+}
+
+.IndiComntTop {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	min-height: 2em;
+	position: relative;
 }
